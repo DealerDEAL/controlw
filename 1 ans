@@ -1,0 +1,19 @@
+class Solution {
+    private:
+        const int target = 9;
+        vector <int> nums = {2,7,11,15};
+    public:
+        int twoSum(vector<int>& nums, int target) {
+            for(int i; i<4; i++){
+                if(nums[i]>target){
+                    nums[i]=0;
+                }
+            }
+            while (!nums.empty() && nums.back() == 0) {
+                nums.pop_back();  
+            }
+            if(nums[0]+nums[1]==target){
+                return nums[1],nums[2];
+            }
+        } 
+};
