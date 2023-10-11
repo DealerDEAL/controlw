@@ -1,19 +1,19 @@
 class Solution {
-    private:
-        const int target = 9;
-        vector <int> nums = {2,7,11,15};
     public:
-        int twoSum(vector<int>& nums, int target) {
-            for(int i; i<4; i++){
-                if(nums[i]>target){
-                    nums[i]=0;
+        vector<int> twoSum(vector<int>& nums, int target) {
+           unordered_map<int, int> mp;    
+        for(int i = 0; i < nums.size(); i++) {
+                if(mp[nums[i]]>target){
+                    mp[nums[i]]=0;
                 }
             }
             while (!nums.empty() && nums.back() == 0) {
                 nums.pop_back();  
             }
-            if(nums[0]+nums[1]==target){
-                return nums[1],nums[2];
+            if(mp[nums[0]]+mp[nums[1]]==target){
+                return mp[nums[1]], mp[nums[2]];
             }
+            if{}
+           return vector<int> {}; 
         } 
 };
